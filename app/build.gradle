@@ -29,6 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -48,9 +51,10 @@ dependencies {
     //okhttp3 logging
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
     // viewmodel
-    def lifecycle_version = "2.5.0-beta01"
+    def lifecycle_version = "2.4.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
     //kotlin coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 }
