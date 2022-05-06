@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin"
+        app:boxCornerRadiusBottomStart="@dimen/radius_bottom_start"
+        app:boxCornerRadiusTopEnd="@dimen/radius_top_end"
+        app:counterEnabled="true"
+        app:counterMaxLength="@string/max_lenght"
+        app:endIconCheckable="true"
+        app:endIconDrawable="@drawable/ic_baseline_art_track_24"
+        app:endIconMode="custom"
+        app:helperText="@string/helper_text_text_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+</FrameLayout>

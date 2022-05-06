@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_margin">10dp</dimen>
+    <dimen name="radius_bottom_start">20dp</dimen>
+    <dimen name="radius_top_end">20dp</dimen>
+</resources>
