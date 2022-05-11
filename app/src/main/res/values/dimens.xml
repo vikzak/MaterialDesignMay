@@ -3,4 +3,8 @@
     <dimen name="layout_margin">10dp</dimen>
     <dimen name="radius_bottom_start">20dp</dimen>
     <dimen name="radius_top_end">20dp</dimen>
+    <dimen name="padding_chip_group_start">10dp</dimen>
+    <dimen name="padding_chip_group_end">10dp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_explanation">15sp</dimen>
 </resources>

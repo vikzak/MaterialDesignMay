@@ -45,6 +45,8 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <com.google.android.material.chip.ChipGroup
+                android:paddingStart="@dimen/padding_chip_group_start"
+                android:paddingEnd="@dimen/padding_chip_group_end"
                 android:id="@+id/chip_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,14 +82,14 @@
                 android:id="@+id/text_Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_title"
                 android:textAlignment="center"
                 tools:text="text title"/>
             <TextView
                 android:id="@+id/text_Explanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="@dimen/text_size_explanation"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 tools:text="text explanation"/>
