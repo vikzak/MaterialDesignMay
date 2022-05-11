@@ -31,6 +31,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentMainBinding.bind(view)
+        binding.bottomAppbar.setOnMenuItemClickListener {
+            when (it.itemId){
+                else -> true
+            }
+        }
+
+        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            Toast.makeText(requireContext(),checkedId.toString(),Toast.LENGTH_SHORT).show()
+        }
 
         binding.textInput.setEndIconOnClickListener {
             //Toast.makeText(requireContext(),"Icon is Pressed", Toast.LENGTH_SHORT).show()
@@ -73,5 +82,22 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             }
         }
 
+        viewLifecycleOwner.lifecycle.coroutineScope.launchWhenStarted {
+            viewModel.textTitle.collect { title ->
+                title?.let {
+                    binding.textTitle.setText(it)
+                }
+            }
+        }
+
+        viewLifecycleOwner.lifecycle.coroutineScope.launchWhenStarted {
+            viewModel.textExplanation.collect { explanation ->
+                explanation?.let {
+                    binding.textExplanation.setText(it)
+                }
+            }
+        }
     }
 }
+
+
