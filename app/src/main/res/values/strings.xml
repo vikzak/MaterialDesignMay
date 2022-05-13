@@ -3,4 +3,9 @@
     <string name="max_lenght">15</string>
     <string name="fragment_main_width">0dp</string>
     <string name="helper_text_text_input_layout">input query</string>
+
+    <string name="photo_of_the_day">Photo of the day</string>
+    <string name="search_wiki">Search in Wiki</string>
+    <string name="settings">settings</string>
+    <string name="search">Search</string>
 </resources>

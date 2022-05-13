@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import com.example.materialdesign.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ESIBottomSheetDialogFragment:BottomSheetDialogFragment() {
+class ESIBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.faragment_dialog_sheet_bottom,container,false)
+        return inflater.inflate(R.layout.faragment_dialog_sheet_bottom, container, false)
     }
 }

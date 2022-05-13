@@ -8,7 +8,7 @@ data class PictureOfTheDayResponse(
     @SerializedName("copyright")
     val copyright: String,
     @SerializedName("date")
-    val date: Date ,
+    val date: Date,
     @SerializedName("explanation")
     val explanation: String,
     @SerializedName("hdurl")

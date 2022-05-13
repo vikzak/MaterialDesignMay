@@ -27,9 +27,11 @@
                 app:endIconCheckable="true"
                 app:endIconDrawable="@drawable/ic_baseline_art_track_24"
                 app:endIconMode="custom"
-                app:helperText="@string/helper_text_text_input_layout">
+                app:helperText="@string/helper_text_text_input_layout"
+                app:startIconDrawable="@drawable/ic_baseline_question_answer_24">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true" />
@@ -45,11 +47,41 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingStart="@dimen/padding_chip_group_start"
                 android:paddingEnd="@dimen/padding_chip_group_end"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_day"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="today" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="yesterday" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="before yesterday" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chip_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_chip_group_start"
+                android:paddingEnd="@dimen/padding_chip_group_end"
                 app:singleLine="true"
                 app:singleSelection="true">
 
@@ -78,21 +110,23 @@
                     android:text="Filter" />
 
             </com.google.android.material.chip.ChipGroup>
+
             <TextView
                 android:id="@+id/text_Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_title"
                 android:textAlignment="center"
-                tools:text="text title"/>
+                android:textSize="@dimen/text_size_title"
+                tools:text="text title" />
+
             <TextView
                 android:id="@+id/text_Explanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingStart="@dimen/text_padding_start_explanation"
+                android:paddingEnd="@dimen/text_padding_end_explanation"
                 android:textSize="@dimen/text_size_explanation"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                tools:text="text explanation"/>
+                tools:text="text explanation" />
 
             <!--        <include
                         android:id="@+id/layout_bottom_sheet_included"
@@ -125,7 +159,7 @@
         android:backgroundTint="@color/cardview_dark_background"
         android:soundEffectsEnabled="true"
         android:src="@android:drawable/btn_star_big_on"
-        app:hideOnScroll="true"
-        app:layout_anchor="@id/bottom_appbar" />
+        app:layout_anchor="@id/bottom_appbar"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
