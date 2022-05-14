@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container_view2"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,16 +20,17 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/search_wiki"
                 android:layout_margin="@dimen/layout_margin"
                 app:boxCornerRadiusBottomStart="@dimen/radius_bottom_start"
                 app:boxCornerRadiusTopEnd="@dimen/radius_top_end"
                 app:counterEnabled="true"
                 app:counterMaxLength="@string/max_lenght"
                 app:endIconCheckable="true"
-                app:endIconDrawable="@drawable/ic_baseline_art_track_24"
+                app:endIconDrawable="@drawable/ic_baseline_search_24"
                 app:endIconMode="custom"
                 app:helperText="@string/helper_text_text_input_layout"
-                app:startIconDrawable="@drawable/ic_baseline_question_answer_24">
+                app:startIconDrawable="@drawable/ic_outline_arrow_circle_up_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_input_text"
@@ -38,9 +40,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <ImageView
+            <com.example.materialdesign.utils.EquilateralImageView
                 android:id="@+id/img_photo_day"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 tools:ignore="MissingConstraints"

@@ -4,8 +4,11 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
@@ -24,8 +27,22 @@ import java.time.format.DateTimeFormatter
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
+    private var _binding:FragmentMainBinding?=null
+    private val binding:FragmentMainBinding
+        get() = _binding!!
+
     private val viewModel: MainViewModel by viewModels {
         MainViewModelFactory(NasaRepositoryImplementation())
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding=FragmentMainBinding.inflate(inflater,container,false)
+        return binding.root
+        //return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,19 +78,19 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         } // тут еще не сообразил как передвать любую дату в строку вызова
 
         binding.textInput.setEndIconOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data =
+                    Uri.parse("https://ru.wikipedia.org/wiki/${binding.textInputText.text.toString()}")
+            })
+        }
+
+        // переход на википедию
+        binding.textInput.setStartIconOnClickListener {
             //Toast.makeText(requireContext(),"Icon is Pressed", Toast.LENGTH_SHORT).show()
             ESIBottomSheetDialogFragment().show(
                 parentFragmentManager,
                 "ESIBottomSheetDialogFragment"
             )
-        }
-
-        // переход на википедию
-        binding.textInput.setStartIconOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data =
-                    Uri.parse("https://ru.wikipedia.org/wiki/${binding.textInputText.text.toString()}")
-            })
         }
 //        val sheetBehavior = BottomSheetBehavior.from<LinearLayout>(binding.layoutBottomSheetIncluded)
 //        val behavior: BottomSheetBehavior<LinearLayout> = BottomSheetBehavior.from(binding.layoutBottomSheetIncluded)
@@ -124,6 +141,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }
             }
         }
+    }
+
+    companion object{
+        fun newInstance() = MainFragment()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }
 
