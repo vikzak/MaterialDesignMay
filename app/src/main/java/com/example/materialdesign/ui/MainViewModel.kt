@@ -47,4 +47,5 @@ class MainViewModel(val repository: NasaRepository) : ViewModel() {
 
 class MainViewModelFactory(private val repository: NasaRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T = MainViewModel(repository) as T
+
 }
