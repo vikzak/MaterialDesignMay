@@ -1,141 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_container_view2"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container_view2"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_margin"
+            android:hint="@string/search_wiki"
+            app:boxCornerRadiusBottomStart="@dimen/radius_bottom_start"
+            app:boxCornerRadiusTopEnd="@dimen/radius_top_end"
+            app:counterEnabled="true"
+            app:counterMaxLength="@string/max_lenght"
+            app:endIconCheckable="true"
+            app:endIconDrawable="@drawable/ic_baseline_search_24"
+            app:endIconMode="custom"
+            app:helperText="@string/helper_text_text_input_layout"
+            app:startIconDrawable="@drawable/ic_outline_arrow_circle_up_24">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/search_wiki"
-                android:layout_margin="@dimen/layout_margin"
-                app:boxCornerRadiusBottomStart="@dimen/radius_bottom_start"
-                app:boxCornerRadiusTopEnd="@dimen/radius_top_end"
-                app:counterEnabled="true"
-                app:counterMaxLength="@string/max_lenght"
-                app:endIconCheckable="true"
-                app:endIconDrawable="@drawable/ic_baseline_search_24"
-                app:endIconMode="custom"
-                app:helperText="@string/helper_text_text_input_layout"
-                app:startIconDrawable="@drawable/ic_outline_arrow_circle_up_24">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_input_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.example.materialdesign.utils.EquilateralImageView
-                android:id="@+id/img_photo_day"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                tools:ignore="MissingConstraints"
-                tools:srcCompat="@tools:sample/avatars" />
+        <com.example.materialdesign.utils.EquilateralImageView
+            android:id="@+id/img_photo_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chip_group_day"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/padding_chip_group_start"
-                android:paddingEnd="@dimen/padding_chip_group_end"
-                app:singleLine="true"
-                app:singleSelection="true">
+    <include
+        android:id="@+id/layout_bottom_sheet_included"
+        layout="@layout/layout_bottom_sheet" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_day"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="today" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="yesterday" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="before yesterday" />
-
-            </com.google.android.material.chip.ChipGroup>
-
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chip_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/padding_chip_group_start"
-                android:paddingEnd="@dimen/padding_chip_group_end"
-                app:singleLine="true"
-                app:singleSelection="true">
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Action"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Action" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Entry"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Entry" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Choice" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Filter" />
-
-            </com.google.android.material.chip.ChipGroup>
-
-            <TextView
-                android:id="@+id/text_Title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="@dimen/text_size_title"
-                tools:text="text title" />
-
-            <TextView
-                android:id="@+id/text_Explanation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/text_padding_start_explanation"
-                android:paddingEnd="@dimen/text_padding_end_explanation"
-                android:textSize="@dimen/text_size_explanation"
-                tools:text="text explanation" />
-
-            <!--        <include
-                        android:id="@+id/layout_bottom_sheet_included"
-                        layout="@layout/layout_bottom_sheet" />-->
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 
     <ProgressBar
         android:id="@+id/progress"

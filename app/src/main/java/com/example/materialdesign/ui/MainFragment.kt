@@ -11,24 +11,21 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import coil.load
 import com.example.materialdesign.R
-import com.example.materialdesign.api.PictureOfTheDayResponse
 import com.example.materialdesign.databinding.FragmentMainBinding
-import com.example.materialdesign.domain.NasaRepository
 import com.example.materialdesign.domain.NasaRepositoryImplementation
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.coroutines.flow.collect
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
-    private var _binding:FragmentMainBinding?=null
-    private val binding:FragmentMainBinding
+    private var _binding: FragmentMainBinding? = null
+    private val binding: FragmentMainBinding
         get() = _binding!!
 
     private val viewModel: MainViewModel by viewModels {
@@ -40,9 +37,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding=FragmentMainBinding.inflate(inflater,container,false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
-        //return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +47,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             viewModel.requestPictureOfTheDay()
         }
     }
+
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,20 +61,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             }
         }
 
-        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
-            Toast.makeText(requireContext(), checkedId.toString(), Toast.LENGTH_SHORT).show()
-        }
-
-
-        binding.chipDay.setOnCheckedChangeListener { compoundButton, b ->
-            if (binding.chipDay.isChecked) {
-                val current = LocalDateTime.now()
-                val formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd")
-                Toast.makeText(requireContext(), current.format(formatter), Toast.LENGTH_SHORT)
-                    .show()
-            }
-        } // тут еще не сообразил как передвать любую дату в строку вызова
-
         binding.textInput.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
@@ -84,7 +68,20 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             })
         }
 
-        // переход на википедию
+//        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+//            Toast.makeText(requireContext(), checkedId.toString(), Toast.LENGTH_SHORT).show()
+//        }
+
+
+//        binding.chipDay.setOnCheckedChangeListener { compoundButton, b ->
+//            if (binding.chipDay.isChecked) {
+//                val current = LocalDateTime.now()
+//                val formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd")
+//                Toast.makeText(requireContext(), current.format(formatter), Toast.LENGTH_SHORT)
+//                    .show()
+//            }
+//        } // тут еще не сообразил как передвать любую дату в строку вызова
+
         binding.textInput.setStartIconOnClickListener {
             //Toast.makeText(requireContext(),"Icon is Pressed", Toast.LENGTH_SHORT).show()
             ESIBottomSheetDialogFragment().show(
@@ -92,19 +89,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 "ESIBottomSheetDialogFragment"
             )
         }
-//        val sheetBehavior = BottomSheetBehavior.from<LinearLayout>(binding.layoutBottomSheetIncluded)
-//        val behavior: BottomSheetBehavior<LinearLayout> = BottomSheetBehavior.from(binding.layoutBottomSheetIncluded)
-//
-//        behavior.state = BottomSheetBehavior.STATE_COLLAPSED
-//
-//        behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
-//            override fun onStateChanged(bottomSheet: View, newState: Int) {
-//            }
-//
-//            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-//            }
-//
-//        })
+
+        bottomSheetBehavior =
+            BottomSheetBehavior.from(binding.layoutBottomSheetIncluded.layotBottomSheetContainer)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_DRAGGING
 
         viewLifecycleOwner.lifecycle.coroutineScope.launchWhenStarted {
             viewModel.loading.collect {
@@ -129,7 +117,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         viewLifecycleOwner.lifecycle.coroutineScope.launchWhenStarted {
             viewModel.textTitle.collect { title ->
                 title?.let {
-                    binding.textTitle.setText(it)
+                    binding.layoutBottomSheetIncluded.headerTextView.setText(it)
                 }
             }
         }
@@ -137,13 +125,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         viewLifecycleOwner.lifecycle.coroutineScope.launchWhenStarted {
             viewModel.textExplanation.collect { explanation ->
                 explanation?.let {
-                    binding.textExplanation.setText(it)
+                    binding.layoutBottomSheetIncluded.descriptionTextView.setText(it)
                 }
             }
         }
     }
 
-    companion object{
+    companion object {
         fun newInstance() = MainFragment()
     }
 
