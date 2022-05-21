@@ -9,4 +9,38 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="color_gray">#66000000</color>
+
+    <color name="colorAccent40Alfa">#66AE0B0B</color>
+    <color name="colorAccent">#AE0B0B</color>
+
+    <color name="paletteblue_50">#e8f0f8</color>
+    <color name="paletteblue_100">#c5daee</color>
+    <color name="paletteblue_200">#9ec2e3</color>
+    <color name="paletteblue_300">#77aad7</color>
+    <color name="paletteblue_400">#5a97cf</color>
+    <color name="paletteblue_500">#3d85c6</color>
+    <color name="paletteblue_600">#377dc0</color>
+    <color name="paletteblue_700">#2f72b9</color>
+    <color name="paletteblue_800">#2768b1</color>
+    <color name="paletteblue_900">#1a55a4</color>
+    <color name="paletteblue_A100">#96d2ff</color>
+    <color name="paletteblue_A200">#59b7ff</color>
+    <color name="paletteblue_A400">#40acff</color>
+    <color name="paletteblue_A700">#30a6ff</color>
+
+    <color name="paletteorange_50">#fdf8e6</color>
+    <color name="paletteorange_100">#fbedc2</color>
+    <color name="paletteorange_200">#f8e199</color>
+    <color name="paletteorange_300">#f5d470</color>
+    <color name="paletteorange_400">#f3cb51</color>
+    <color name="paletteorange_500">#f1c232</color>
+    <color name="paletteorange_600">#efbc2d</color>
+    <color name="paletteorange_700">#edb426</color>
+    <color name="paletteorange_800">#ebac1f</color>
+    <color name="paletteorange_900">#e79f13</color>
+    <color name="paletteorange_A100">#ffffff</color>
+    <color name="paletteorange_A200">#ffe0c2</color>
+    <color name="paletteorange_A400">#ffd4a9</color>
+    <color name="paletteorange_A700">#ffcc99</color>
+
 </resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/navigation_one"
+            android:icon="@drawable/ic_load_error_vector"
+            android:title="На экран NavigationActivity" />
+        <item
+            android:id="@+id/navigation_two"
+            android:icon="@drawable/ic_send"
+            android:title="На экран BottomNavigationActivity" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_three"
+            android:icon="@drawable/ic_settings_menu"
+            android:title="На экран LayoutActivity" />
+
+        <item
+            android:id="@+id/navigation_four"
+            android:icon="@drawable/ic_favourite_menu"
+            android:title="На экран AnimationsActivity" />
+
+        <item
+            android:id="@+id/navigation_five"
+            android:icon="@drawable/ic_archive"
+            android:title="На экран RecyclerActivity" />
+
+    </group>
+
+</menu>
