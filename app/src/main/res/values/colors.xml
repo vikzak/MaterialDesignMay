@@ -43,4 +43,19 @@
     <color name="paletteorange_A400">#ffd4a9</color>
     <color name="paletteorange_A700">#ffcc99</color>
 
+    <color name="mypalettegreen_50">#e7efe4</color>
+    <color name="mypalettegreen_100">#c3d6bb</color>
+    <color name="mypalettegreen_200">#9cbb8e</color>
+    <color name="mypalettegreen_300">#749f61</color>
+    <color name="mypalettegreen_400">#568b3f</color>
+    <color name="mypalettegreen_500">#38761d</color>
+    <color name="mypalettegreen_600">#326e1a</color>
+    <color name="mypalettegreen_700">#2b6315</color>
+    <color name="mypalettegreen_800">#245911</color>
+    <color name="mypalettegreen_900">#17460a</color>
+    <color name="mypalettegreen_A100">#90ff31</color>
+    <color name="mypalettegreen_A200">#6ff300</color>
+    <color name="mypalettegreen_A400">#64da00</color>
+    <color name="mypalettegreen_A700">#5dca00</color>
+
 </resources>

@@ -5,8 +5,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -157,16 +155,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(
-                requireContext(),
-                "click favorite icon",
-                Toast.LENGTH_SHORT
-            ).show()
-            R.id.app_bar_setting -> Toast.makeText(
-                requireContext(),
-                "click setting icon",
-                Toast.LENGTH_SHORT
-            ).show()
+            R.id.app_bar_arrow_upward ->  showDescriptionPictureOfDayResum()
+//            R.id.app_bar_arrow_upward -> Toast.makeText(
+//                requireContext(),
+//                "click favorite icon",
+//                Toast.LENGTH_SHORT
+//            ).show()
+            R.id.app_bar_setting -> {
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,SettingFragment.newInstance()).addToBackStack("").commit()
+            }
+
             //android.R.id.home -> Toast.makeText(requireContext(),"click home (burger)", Toast.LENGTH_SHORT).show()
             android.R.id.home -> BottomNavigationDrawerFragment().show(
                 requireActivity().supportFragmentManager,
@@ -174,6 +172,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             )
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun showDescriptionPictureOfDayResum() {
+        bottomSheetBehavior = BottomSheetBehavior.from(binding.layoutBottomSheetIncluded.layotBottomSheetContainer)
+        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_HIDDEN){
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        }
     }
 
     // анимируем fab для этого заводим переменную isMain

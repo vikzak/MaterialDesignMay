@@ -13,4 +13,23 @@
     <string name="loading_text">Loading...</string>
     <string name="favorite">favorite</string>
     <string name="return_menu">return</string>
+
+    <string name="pause_left">M26,23 V41</string>
+    <string name="pause_right">M37,23 L37,32 L37,41</string>
+    <string name="pause_right_play">M26,23 L41,32 L27,41</string>
+    <string name="clockwise_circle">M32,8 A24,24 0 1 1 31.99,8 z</string>
+    <string name="today">today</string>
+    <string name="yesterday">yesterday</string>
+    <string name="twodaysago">two days ago</string>
+    <string name="day">day</string>
+    <string name="night">night</string>
+    <string name="theme_select">select Day/Night or other theme</string>
+    <string name="theme_default">Default</string>
+    <string name="theme_one">Orange</string>
+    <string name="two">Green</string>
+    <string name="nasa_picture_of_day">select day</string>
+    <string name="chips_type">type chips:</string>
+    <string name="picture_description_show">picture description show</string>
+    <string name="attr_text">test ?attr color</string>
+
 </resources>

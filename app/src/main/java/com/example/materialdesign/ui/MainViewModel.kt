@@ -31,7 +31,7 @@ class MainViewModel(val repository: NasaRepository) : ViewModel() {
         _loading.value = true //либо так:  _loading.emit(true)
         viewModelScope.launch {
             try {
-                val url = repository.pictuteOfTheDay().url
+                val url = repository.pictuteOfTheDay().hdurl
                 val title = repository.pictuteOfTheDay().title
                 val explanation = repository.pictuteOfTheDay().explanation
                 _image.emit(url)

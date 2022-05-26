@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/app_bar_fav"
-        android:icon="@drawable/ic_favourite_menu"
-        android:title="@string/favorite"
+        android:id="@+id/app_bar_arrow_upward"
+        android:icon="@drawable/ic_baseline_arrow_upward_24_w"
+        android:title="@string/picture_description_show"
         app:showAsAction="ifRoom" />
 
     <item

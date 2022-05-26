@@ -13,6 +13,10 @@ class SettingFragment : Fragment(){
     private val binding: FragmentSettingBinding
         get() = _binding!!
 
+    companion object {
+        fun newInstance() = SettingFragment()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
