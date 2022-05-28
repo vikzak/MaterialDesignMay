@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -180,7 +181,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/paletteblue_300"
-            android:layout_marginStart="@dimen/layout_margin"
+            app:checkedIcon="@drawable/ic_baseline_check_24"
+            app:checkedIconEnabled="true"
             android:text="@string/theme_default" />
 
         <com.google.android.material.chip.Chip
@@ -189,6 +191,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/paletteorange_300"
+            app:checkedIcon="@drawable/ic_baseline_check_24"
+            app:checkedIconEnabled="true"
             android:text="@string/theme_one" />
 
         <com.google.android.material.chip.Chip
@@ -197,6 +201,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/mypalettegreen_300"
+            app:checkedIcon="@drawable/ic_baseline_check_24"
+            app:checkedIconEnabled="true"
             android:text="@string/two" />
     </com.google.android.material.chip.ChipGroup>
 
