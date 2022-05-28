@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -91,6 +92,26 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         bottomSheetBehavior =
             BottomSheetBehavior.from(binding.layoutBottomSheetIncluded.layotBottomSheetContainer)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_DRAGGING
+        bottomSheetBehavior.addBottomSheetCallback(object :
+            BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                when (newState) {
+//                    BottomSheetBehavior.STATE_HIDDEN -> TODO()
+//                    BottomSheetBehavior.STATE_DRAGGING -> TODO()
+//                    BottomSheetBehavior.STATE_COLLAPSED -> TODO()
+//                    BottomSheetBehavior.STATE_EXPANDED -> TODO()
+//                    BottomSheetBehavior.STATE_HALF_EXPANDED -> TODO()
+//                    BottomSheetBehavior.STATE_SETTLING -> TODO()
+                }
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                // для визуализации
+                binding.slideOffsetBH.setText("$slideOffset slideOffset")
+                // лог
+                Log.d("logs behavior","$slideOffset slideOffset")
+            }
+        })
 
         viewLifecycleOwner.lifecycle.coroutineScope.launchWhenStarted {
             viewModel.loading.collect {
@@ -134,17 +155,30 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             if (isMain) {
                 binding.bottomAppbar.navigationIcon = null
                 binding.bottomAppbar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-                binding.fab.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_back_fab))
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_back_fab
+                    )
+                )
                 binding.bottomAppbar.replaceMenu(R.menu.menu_bottom_bar_other_screen)
             } else {
-                binding.bottomAppbar.navigationIcon = ContextCompat.getDrawable(requireContext(),R.drawable.ic_hamburger_menu_bottom_bar)
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+                binding.bottomAppbar.navigationIcon = ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_hamburger_menu_bottom_bar
+                )
                 binding.bottomAppbar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-                binding.fab.setImageDrawable(ContextCompat.getDrawable(requireContext(),android.R.drawable.btn_star_big_on))
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        android.R.drawable.btn_star_big_on
+                    )
+                )
                 binding.bottomAppbar.replaceMenu(R.menu.menu_bottom_appbar)
             }
             isMain = !isMain
         }
-
     }
 
 
@@ -155,14 +189,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_arrow_upward ->  showDescriptionPictureOfDayResum()
+            R.id.app_bar_arrow_upward -> showDescriptionPictureOfDayResum()
 //            R.id.app_bar_arrow_upward -> Toast.makeText(
 //                requireContext(),
 //                "click favorite icon",
 //                Toast.LENGTH_SHORT
 //            ).show()
             R.id.app_bar_setting -> {
-                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view,SettingFragment.newInstance()).addToBackStack("").commit()
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container_view, SettingFragment.newInstance())
+                    .addToBackStack("").commit()
             }
 
             //android.R.id.home -> Toast.makeText(requireContext(),"click home (burger)", Toast.LENGTH_SHORT).show()
@@ -175,8 +211,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun showDescriptionPictureOfDayResum() {
-        bottomSheetBehavior = BottomSheetBehavior.from(binding.layoutBottomSheetIncluded.layotBottomSheetContainer)
-        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_HIDDEN){
+        bottomSheetBehavior =
+            BottomSheetBehavior.from(binding.layoutBottomSheetIncluded.layotBottomSheetContainer)
+        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_HIDDEN) {
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         }
     }

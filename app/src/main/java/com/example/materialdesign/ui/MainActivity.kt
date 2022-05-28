@@ -8,6 +8,8 @@ import com.example.materialdesign.R
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // задаем тему
+        setTheme(R.style.MyDefaultTheme)
         setContentView(R.layout.activity_main)
         if (savedInstanceState==null){
             supportFragmentManager.beginTransaction()

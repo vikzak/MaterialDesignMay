@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/loading_text"
-        android:textSize="32sp"
+        android:textAppearance="@style/myHeadlineStyle"
         android:layout_marginTop="5dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
@@ -44,8 +44,10 @@
         android:layout_marginLeft="@dimen/layout_margin"
         android:layout_marginRight="@dimen/layout_margin"
         android:text="@string/loading_text"
+        android:fontFamily="@font/amatic_sc"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_text_view"/>
+        app:layout_constraintTop_toBottomOf="@+id/header_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

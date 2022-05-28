@@ -25,20 +25,10 @@
         <!-- Customize your theme here. -->
         <item name="floatingActionButtonStyle">@style/myFloatingActionButtonStyle</item>
         <item name="bottomAppBarStyle">@style/myBottomAppBarStyle</item>
-        <!-- постоянные цвета -->
-        <item name="superColor_100">#FFC107</item>
-        <item name="superColor_200">#8BC34A</item>
+
+        <item name="textAppearanceHeadline1">@style/myHeadlineStyle</item>
     </style>
 
-    <style name="myFloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="backgroundTint">@color/paletteblue_A700</item>
-    </style>
-    <style name="myBottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
-        <item name="backgroundTint">@color/paletteorange_800</item>
-    </style>
-
-
-    
     <!-- MY THEME -->
     <style name="MyDefaultTheme" parent="Theme.MaterialDesign">
         <item name="superColor_50">@color/paletteblue_50</item>
@@ -91,6 +81,5 @@
         <item name="superColor_A400">@color/mypalettegreen_A400</item>
         <item name="superColor_A700">@color/mypalettegreen_A700</item>
     </style>
-
 
 </resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- переопределяем стиль заголовка -->
+    <style name="myHeadlineStyle" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">32sp</item>
+        <item name="fontFamily">@font/amatic_sc</item>
+    </style>
+
+    <!-- точечно указываем цвет элементов но интегрируем с темой-->
+    <style name="myFloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">?superColor_A700</item>
+    </style>
+    <style name="myBottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">?superColor_800</item>
+    </style>
+
+</resources>

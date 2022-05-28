@@ -160,12 +160,14 @@
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/day_chip"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/day" />
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/night_chip"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -174,6 +176,7 @@
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:id="@+id/theme_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/paletteblue_300"
@@ -182,6 +185,7 @@
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:id="@+id/theme_orange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/paletteorange_300"
@@ -189,6 +193,7 @@
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:id="@+id/theme_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:chipBackgroundColor="@color/mypalettegreen_300"
