@@ -1,9 +1,9 @@
-package com.example.materialdesign.ui
+package com.example.materialdesign.view
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.materialdesign.domain.NasaRepository
+import com.example.materialdesign.repository.NasaRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow

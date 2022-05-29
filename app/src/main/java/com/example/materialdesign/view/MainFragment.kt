@@ -1,4 +1,4 @@
-package com.example.materialdesign.ui
+package com.example.materialdesign.view
 
 import android.content.Intent
 import android.net.Uri
@@ -16,7 +16,10 @@ import androidx.lifecycle.coroutineScope
 import coil.load
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.FragmentMainBinding
-import com.example.materialdesign.domain.NasaRepositoryImplementation
+import com.example.materialdesign.repository.NasaRepositoryImplementation
+import com.example.materialdesign.view.chips.SettingFragment
+import com.example.materialdesign.view.ui.BottomNavigationDrawerFragment
+import com.example.materialdesign.view.ui.ESIBottomSheetDialogFragment
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
@@ -190,22 +193,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.app_bar_arrow_upward -> showDescriptionPictureOfDayResum()
-//            R.id.app_bar_arrow_upward -> Toast.makeText(
-//                requireContext(),
-//                "click favorite icon",
-//                Toast.LENGTH_SHORT
-//            ).show()
             R.id.app_bar_setting -> {
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, SettingFragment.newInstance())
                     .addToBackStack("").commit()
             }
-
-            //android.R.id.home -> Toast.makeText(requireContext(),"click home (burger)", Toast.LENGTH_SHORT).show()
             android.R.id.home -> BottomNavigationDrawerFragment().show(
                 requireActivity().supportFragmentManager,
                 ""
             )
+            R.id.navigation_one -> {}
         }
         return super.onOptionsItemSelected(item)
     }

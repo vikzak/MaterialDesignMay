@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyDefaultTheme">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,10 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity android:name=".view.navigation.NavigationActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

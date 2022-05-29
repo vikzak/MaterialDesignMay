@@ -1,11 +1,10 @@
-package com.example.materialdesign.ui
+package com.example.materialdesign.view.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.materialdesign.R
-import com.example.materialdesign.databinding.FragmentMainBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ESIBottomSheetDialogFragment : BottomSheetDialogFragment() {

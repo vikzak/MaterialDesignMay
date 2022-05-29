@@ -1,4 +1,4 @@
-package com.example.materialdesign.api
+package com.example.materialdesign.repository.api
 
 import retrofit2.http.GET
 import retrofit2.http.Query

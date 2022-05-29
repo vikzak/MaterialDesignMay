@@ -1,13 +1,13 @@
-package com.example.materialdesign.ui
+package com.example.materialdesign.view.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.BottomNavigationLayoutBinding
-import com.example.materialdesign.databinding.FragmentMainBinding
+import com.example.materialdesign.view.navigation.NavigationActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
@@ -25,6 +25,20 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.navigationView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.navigation_one -> {
+                    startActivity(Intent(requireContext(),NavigationActivity::class.java))
+                }
+                R.id.navigation_two -> {
+                    //startActivity(Intent(requireContext(),NavigationActivity::class.java))
+                }
+            }
+            true
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()

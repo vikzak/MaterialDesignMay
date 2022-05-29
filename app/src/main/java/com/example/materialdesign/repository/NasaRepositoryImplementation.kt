@@ -1,7 +1,7 @@
-package com.example.materialdesign.domain
+package com.example.materialdesign.repository
 
-import com.example.materialdesign.api.NasaApi
-import com.example.materialdesign.api.PictureOfTheDayResponse
+import com.example.materialdesign.repository.api.NasaApi
+import com.example.materialdesign.repository.api.PictureOfTheDayResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

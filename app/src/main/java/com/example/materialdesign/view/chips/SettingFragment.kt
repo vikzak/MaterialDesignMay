@@ -1,4 +1,4 @@
-package com.example.materialdesign.ui
+package com.example.materialdesign.view.chips
 
 import android.content.Context
 import android.os.Bundle
@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import com.example.materialdesign.R
-import com.example.materialdesign.databinding.FragmentMainBinding
 import com.example.materialdesign.databinding.FragmentSettingBinding
+import com.example.materialdesign.view.*
 
 class SettingFragment : Fragment(), View.OnClickListener {
     //    private val KEY_SP = "sp"
