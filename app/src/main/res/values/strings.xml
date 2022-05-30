@@ -34,5 +34,8 @@
     <string name="text_earht">Earht</string>
     <string name="text_mars">Mars</string>
     <string name="text_system">System</string>
+    <string name="earth_description_menu">Описание пункта Земля</string>
+    <string name="mars_description_menu">Описание пункта Марс</string>
+    <string name="system_description_menu">Описание пункта Солнечная система</string>
 
 </resources>
