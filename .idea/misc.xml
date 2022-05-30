@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/drawable/swipe_indicator_active.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.175" />
         <entry key="app/src/main/res/font/weqwe.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2890625" />
         <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/activity_navigation_tablayout_item_eath.xml" value="0.20677083333333332" />
@@ -32,6 +33,7 @@
         <entry key="app/src/main/res/menu/menu_bottom_appbar.xml" value="0.28802083333333334" />
         <entry key="app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.2078125" />
       </map>
     </option>
   </component>

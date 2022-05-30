@@ -25,6 +25,10 @@
             android:exported="true">
 
         </activity>
+        <activity android:name=".view.navigation.BottomNavigationActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

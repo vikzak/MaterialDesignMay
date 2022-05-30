@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.BottomNavigationLayoutBinding
+import com.example.materialdesign.view.navigation.BottomNavigationActivity
 import com.example.materialdesign.view.navigation.NavigationActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -20,7 +21,7 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = BottomNavigationLayoutBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -33,7 +34,7 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                     startActivity(Intent(requireContext(),NavigationActivity::class.java))
                 }
                 R.id.navigation_two -> {
-                    //startActivity(Intent(requireContext(),NavigationActivity::class.java))
+                    startActivity(Intent(requireContext(),BottomNavigationActivity::class.java))
                 }
             }
             true
