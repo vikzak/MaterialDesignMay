@@ -31,5 +31,8 @@
     <string name="chips_type">type chips:</string>
     <string name="picture_description_show">picture description show</string>
     <string name="attr_text">test ?attr color</string>
+    <string name="text_earht">Earht</string>
+    <string name="text_mars">Mars</string>
+    <string name="text_system">System</string>
 
 </resources>
