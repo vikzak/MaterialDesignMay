@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.BottomNavigationLayoutBinding
 import com.example.materialdesign.view.navigation.BottomNavigationActivity
@@ -36,9 +37,22 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 R.id.navigation_two -> {
                     startActivity(Intent(requireContext(),BottomNavigationActivity::class.java))
                 }
+                R.id.navigation_three -> {
+                    showMessage("пункт №3")
+                }
+                R.id.navigation_four -> {
+                    showMessage("пункт №4")
+                }
+                R.id.navigation_five -> {
+                    showMessage("пункт №5")
+                }
             }
             true
         }
+    }
+
+    private fun showMessage(s: String) {
+        Toast.makeText(context,s,Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {
