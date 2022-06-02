@@ -37,5 +37,8 @@
     <string name="earth_description_menu">Описание пункта Земля</string>
     <string name="mars_description_menu">Описание пункта Марс</string>
     <string name="system_description_menu">Описание пункта Солнечная система</string>
+    <string name="constraint">constraint</string>
+    <string name="coordinator">coordinator</string>
+    <string name="motion">motion</string>
 
 </resources>

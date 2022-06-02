@@ -4,5 +4,4 @@ import com.example.materialdesign.repository.api.PictureOfTheDayResponse
 
 interface NasaRepository {
     suspend fun pictuteOfTheDay(): PictureOfTheDayResponse
-    suspend fun pictuteOfTheDayMars(): PictureOfTheDayResponse
 }

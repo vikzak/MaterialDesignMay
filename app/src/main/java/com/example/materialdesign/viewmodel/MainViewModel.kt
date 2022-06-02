@@ -44,22 +44,6 @@ class MainViewModel(val repository: NasaRepository) : ViewModel() {
         }
     }
 
-    fun requestPictureOfTheDayMars() {
-        _loading.value = true //либо так:  _loading.emit(true)
-        viewModelScope.launch {
-            try {
-                val url = repository.pictuteOfTheDayMars().hdurl
-                val title = repository.pictuteOfTheDayMars().title
-                val explanation = repository.pictuteOfTheDayMars().explanation
-                _image.emit(url)
-                _textTitle.emit(title)
-                _textExplanation.emit(explanation)
-            } catch (exc: IOException) {
-                _error.emit("Network Error")
-            }
-            _loading.emit(false)
-        }
-    }
 }
 
 class MainViewModelFactory(private val repository: NasaRepository) : ViewModelProvider.Factory {

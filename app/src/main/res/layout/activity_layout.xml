@@ -15,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_gravity="bottom"
         android:layout_height="?actionBarSize"
-        app:labelVisibilityMode="labeled"
-        app:itemHorizontalTranslationEnabled="false"
-        app:menu="@menu/menu_bottom_navigation_view" />
+        app:labelVisibilityMode="selected"
+        app:itemHorizontalTranslationEnabled="true"
+        app:menu="@menu/menu_bottom_navigation_activity_layout" />
 
 </FrameLayout>
