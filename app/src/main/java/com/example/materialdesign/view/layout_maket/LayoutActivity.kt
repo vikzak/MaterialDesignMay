@@ -1,16 +1,12 @@
 package com.example.materialdesign.view.layout_maket
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.materialdesign.R
-import com.example.materialdesign.databinding.ActivityBottomNavigationBinding
 import com.example.materialdesign.databinding.ActivityLayoutBinding
-import com.example.materialdesign.databinding.ActivityNavigationBinding
-import com.example.materialdesign.view.navigation.EarthFragment
-import com.example.materialdesign.view.navigation.MarsFragment
-import com.example.materialdesign.view.navigation.SystemFragment
+import com.example.materialdesign.view.layout_maket.constraint.ConstraintFragment
+import com.example.materialdesign.view.layout_maket.coordinator.CoordinatorFragment
 
 class LayoutActivity : AppCompatActivity() {
     lateinit var binding: ActivityLayoutBinding
@@ -27,7 +23,7 @@ class LayoutActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_coordinator -> {
-
+                    navigationTo(CoordinatorFragment())
                     true
                 }
                 R.id.bottom_motion -> {

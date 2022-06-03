@@ -39,7 +39,7 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                     startActivity(Intent(requireContext(),BottomNavigationActivity::class.java))
                 }
                 R.id.navigation_three -> {
-                    startActivity(Intent(requireContext(),LayoutActivity::class.java))
+                    startActivity(Intent(requireContext(), LayoutActivity::class.java))
                 }
                 R.id.navigation_four -> {
                     showMessage("пункт №4")
