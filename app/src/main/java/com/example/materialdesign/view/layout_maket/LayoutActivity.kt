@@ -7,6 +7,7 @@ import com.example.materialdesign.R
 import com.example.materialdesign.databinding.ActivityLayoutBinding
 import com.example.materialdesign.view.layout_maket.constraint.ConstraintFragment
 import com.example.materialdesign.view.layout_maket.coordinator.CoordinatorFragment
+import com.example.materialdesign.view.layout_maket.motion.MotionFragment
 
 class LayoutActivity : AppCompatActivity() {
     lateinit var binding: ActivityLayoutBinding
@@ -27,7 +28,7 @@ class LayoutActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_motion -> {
-
+                    navigationTo(MotionFragment())
                     true
                 }
                 else -> true
