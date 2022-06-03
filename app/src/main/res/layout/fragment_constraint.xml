@@ -36,6 +36,27 @@
         app:layout_constraintVertical_bias="0.13"
         app:layout_constraintWidth_percent="0.5" />
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="materialButton4"/>
+
+    <TextView
+        android:id="@+id/textViewTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barrier"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintStart_toStartOf="@id/barrierOne"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton4"
         android:layout_width="0dp"
@@ -46,7 +67,7 @@
         app:layout_constraintBottom_toTopOf="@+id/materialButton3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.09"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.5"
