@@ -4,15 +4,20 @@
         app:constraintSetStart="@layout/fragment_motion_start"
         app:constraintSetEnd="@layout/fragment_motion_end"
         app:duration="700">
-
-        <OnClick app:targetId="@+id/materialButtonBlue"/>
+<!--        <OnClick app:targetId="@+id/materialButtonBlue"/>-->
+        <OnSwipe app:touchAnchorId="@+id/materialButtonBlue"
+            app:touchAnchorSide="left"
+            app:dragDirection="dragRight"/>
     </Transition>
 
 
     <Transition
-        app:constraintSetStart="@layout/fragment_motion_end"
-        app:constraintSetEnd="@layout/fragment_motion_start"
+        app:constraintSetStart="@layout/fragment_motion_start"
+        app:constraintSetEnd="@layout/fragment_motion_end"
         app:duration="700">
-        <OnClick app:targetId="@+id/materialButtonOnange"/>
+<!--        <OnClick app:targetId="@+id/materialButtonOnange"/>-->
+        <OnSwipe app:touchAnchorId="@+id/materialButtonOnange"
+            app:touchAnchorSide="right"
+            app:dragDirection="dragLeft"/>
     </Transition>
 </MotionScene>
