@@ -41,6 +41,13 @@
     <string name="coordinator">coordinator</string>
     <string name="motion">motion</string>
     <string name="text_actv_activity_animation">Test transitions</string>
+    <string name="text_recycler_item">TAP ME</string>
+    <string name="text_ACB">Animate</string>
+    <string name="title_navigation_one">На экран NavigationActivity</string>
+    <string name="title_navigation_two">На экран BottomNavigationActivity</string>
+    <string name="title_navigation_three">На экран LayoutActivity</string>
+    <string name="title_navigation_four">На экран AnimationsActivity</string>
+    <string name="title_navigation_five">На экран RecyclerActivity</string>
 
 
 </resources>
