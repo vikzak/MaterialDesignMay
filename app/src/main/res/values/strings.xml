@@ -40,6 +40,7 @@
     <string name="constraint">constraint</string>
     <string name="coordinator">coordinator</string>
     <string name="motion">motion</string>
+    <string name="text_actv_activity_animation">Test transitions</string>
 
 
 </resources>

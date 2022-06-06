@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.BottomNavigationLayoutBinding
 import com.example.materialdesign.view.layout_maket.LayoutActivity
+import com.example.materialdesign.view.layout_maket.animations.AnimationActivity
 import com.example.materialdesign.view.navigation.BottomNavigationActivity
 import com.example.materialdesign.view.navigation.NavigationActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -42,7 +43,7 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                     startActivity(Intent(requireContext(), LayoutActivity::class.java))
                 }
                 R.id.navigation_four -> {
-                    showMessage("пункт №4")
+                    startActivity(Intent(requireContext(), AnimationActivity::class.java))
                 }
                 R.id.navigation_five -> {
                     showMessage("пункт №5")
