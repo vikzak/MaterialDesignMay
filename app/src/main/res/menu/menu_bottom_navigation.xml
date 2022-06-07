@@ -30,7 +30,7 @@
         <item
             android:id="@+id/navigation_six"
             android:icon="@drawable/ic_archive"
-            android:title="@string/title_navigation_five" />
+            android:title="@string/title_navigation_six" />
 
     </group>
 

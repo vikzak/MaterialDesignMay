@@ -48,6 +48,7 @@
     <string name="title_navigation_three">На экран LayoutActivity</string>
     <string name="title_navigation_four">На экран AnimationsActivity</string>
     <string name="title_navigation_five">На экран RecyclerActivity</string>
+    <string name="title_navigation_six">На экран Scale Animations</string>
 
 
 </resources>

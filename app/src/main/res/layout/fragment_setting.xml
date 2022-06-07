@@ -137,11 +137,11 @@
         android:visibility="visible">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
+            android:id="@+id/bottomNavigationViewSetting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:menu="@menu/menu_bottom_navigation" />
+            app:menu="@menu/menu_bottom_navigation_activity_layout" />
     </LinearLayout>
 
 

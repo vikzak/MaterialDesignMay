@@ -11,6 +11,7 @@ import com.example.materialdesign.databinding.BottomNavigationLayoutBinding
 import com.example.materialdesign.view.layout_maket.LayoutActivity
 import com.example.materialdesign.view.layout_maket.animations.AnimationActivity
 import com.example.materialdesign.view.layout_maket.animations.AnimationActivityExplode
+import com.example.materialdesign.view.layout_maket.animations.AnimationActivityZoom
 import com.example.materialdesign.view.navigation.BottomNavigationActivity
 import com.example.materialdesign.view.navigation.NavigationActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -50,7 +51,7 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                     startActivity(Intent(requireContext(), AnimationActivityExplode::class.java))
                 }
                 R.id.navigation_six -> {
-                    showMessage("пункт №5")
+                    startActivity(Intent(requireContext(), AnimationActivityZoom::class.java))
                 }
             }
             true
