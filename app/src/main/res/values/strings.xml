@@ -50,6 +50,7 @@
     <string name="title_navigation_five">На экран RecyclerActivity</string>
     <string name="title_navigation_six">На экран Scale Animations</string>
     <string name="text_ACB_path">click me</string>
+    <string name="title_navigation_seven">На экран Animations Resort</string>
 
 
 </resources>

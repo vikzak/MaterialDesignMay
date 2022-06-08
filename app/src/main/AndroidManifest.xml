@@ -40,6 +40,9 @@
         <activity android:name=".view.layout_maket.animations.AnimationActivityZoom"
             android:exported="true">
         </activity>
+        <activity android:name=".view.layout_maket.animations.AnimationActivityResort"
+            android:exported="true">
+        </activity>
 
     </application>
 
