@@ -15,7 +15,7 @@
         <entry key="app/src/main/res/drawable/swipe_indicator_active.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.175" />
         <entry key="app/src/main/res/font/weqwe.xml" value="0.23697916666666666" />
-        <entry key="app/src/main/res/layout/activity_animation.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/layout/activity_animation.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_animation_explode.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/layout/activity_animation_explode_recycler_item.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/activity_animation_zoom.xml" value="0.2890625" />
