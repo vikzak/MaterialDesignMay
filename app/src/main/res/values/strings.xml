@@ -51,6 +51,7 @@
     <string name="title_navigation_six">На экран Scale Animations</string>
     <string name="text_ACB_path">click me</string>
     <string name="title_navigation_seven">На экран Animations Resort</string>
+    <string name="title_navigation_eight">На экран FAB Animations</string>
 
 
 </resources>

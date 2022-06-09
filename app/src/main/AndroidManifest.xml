@@ -43,6 +43,9 @@
         <activity android:name=".view.layout_maket.animations.AnimationActivityResort"
             android:exported="true">
         </activity>
+        <activity android:name=".view.layout_maket.animations.AnimationActivityFabRotation"
+            android:exported="true">
+        </activity>
 
     </application>
 

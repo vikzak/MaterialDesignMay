@@ -35,6 +35,10 @@
             android:id="@+id/navigation_seven"
             android:icon="@drawable/ic_baseline_shuffle_24"
             android:title="@string/title_navigation_seven" />
+        <item
+            android:id="@+id/navigation_eight"
+            android:icon="@drawable/ic_baseline_smart_button_24"
+            android:title="@string/title_navigation_eight" />
 
     </group>
 

@@ -9,10 +9,7 @@ import android.widget.Toast
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.BottomNavigationLayoutBinding
 import com.example.materialdesign.view.layout_maket.LayoutActivity
-import com.example.materialdesign.view.layout_maket.animations.AnimationActivity
-import com.example.materialdesign.view.layout_maket.animations.AnimationActivityExplode
-import com.example.materialdesign.view.layout_maket.animations.AnimationActivityResort
-import com.example.materialdesign.view.layout_maket.animations.AnimationActivityZoom
+import com.example.materialdesign.view.layout_maket.animations.*
 import com.example.materialdesign.view.navigation.BottomNavigationActivity
 import com.example.materialdesign.view.navigation.NavigationActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -56,6 +53,9 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 }
                 R.id.navigation_seven -> {
                     startActivity(Intent(requireContext(), AnimationActivityResort::class.java))
+                }
+                R.id.navigation_eight -> {
+                    startActivity(Intent(requireContext(), AnimationActivityFabRotation::class.java))
                 }
             }
             true
