@@ -57,6 +57,9 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 R.id.navigation_eight -> {
                     startActivity(Intent(requireContext(), AnimationActivityFabRotation::class.java))
                 }
+                R.id.navigation_nine -> {
+                    startActivity(Intent(requireContext(), AnimationActivityElevation::class.java))
+                }
             }
             true
         }

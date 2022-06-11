@@ -52,6 +52,8 @@
     <string name="text_ACB_path">click me</string>
     <string name="title_navigation_seven">На экран Animations Resort</string>
     <string name="title_navigation_eight">На экран FAB Animations</string>
+    <string name="title_navigation_nine">На экран Toolbar Elevation</string>
+    <string name="animation_toolbar_elevation">Toolbar Elevation animation</string>
 
 
 </resources>
