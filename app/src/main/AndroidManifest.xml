@@ -49,6 +49,9 @@
         <activity android:name=".view.layout_maket.animations.AnimationActivityElevation"
             android:exported="true">
         </activity>
+        <activity android:name=".view.layout_maket.animations.AnimationActivityBonus"
+            android:exported="true">
+        </activity>
 
     </application>
 

@@ -60,6 +60,9 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 R.id.navigation_nine -> {
                     startActivity(Intent(requireContext(), AnimationActivityElevation::class.java))
                 }
+                R.id.navigation_ten -> {
+                    startActivity(Intent(requireContext(), AnimationActivityBonus::class.java))
+                }
             }
             true
         }

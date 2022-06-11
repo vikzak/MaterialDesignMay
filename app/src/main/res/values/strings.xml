@@ -54,6 +54,11 @@
     <string name="title_navigation_eight">На экран FAB Animations</string>
     <string name="title_navigation_nine">На экран Toolbar Elevation</string>
     <string name="animation_toolbar_elevation">Toolbar Elevation animation</string>
+    <string name="yandex_day_photo">Коты на прогулке</string>
+    <string name="title_navigation_ten">На экран Cat Shop))</string>
+    <string name="bonus_description">На этом, случайно запечатлённом кадре, мама Кошка и её котенок на прогулке в солнечный летний денёк.</string>
+    <string name="show_description_bonus">Показать описание</string>
+    <string name="cats_photo_date">11 июня 2022</string>
 
 
 </resources>

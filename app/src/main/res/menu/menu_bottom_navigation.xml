@@ -43,6 +43,10 @@
             android:id="@+id/navigation_nine"
             android:icon="@drawable/ic_baseline_list_alt_24"
             android:title="@string/title_navigation_nine" />
+        <item
+            android:id="@+id/navigation_ten"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/title_navigation_ten" />
 
     </group>
 
