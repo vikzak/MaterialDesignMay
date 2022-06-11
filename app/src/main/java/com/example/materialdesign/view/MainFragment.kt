@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -13,6 +14,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
 import coil.load
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.FragmentMainBinding
@@ -25,7 +28,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
 class MainFragment : Fragment(R.layout.fragment_main) {
-
+    var flag = false
     private var _binding: FragmentMainBinding? = null
     private val binding: FragmentMainBinding
         get() = _binding!!
@@ -48,6 +51,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         if (savedInstanceState == null) {
             viewModel.requestPictureOfTheDay()
         }
+
     }
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
@@ -132,6 +136,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             viewModel.image.collect { url ->
                 url?.let {
                     binding.imgPhotoDay.load(it)
+                    binding.imgPhotoDay.setOnClickListener {
+                        val changeBounds = ChangeImageTransform()
+                        TransitionManager.beginDelayedTransition(binding.fragmentContainerView2,changeBounds)
+                        flag = !flag
+                        // без анимации:
+                        binding.imgPhotoDay.scaleType =
+                            if (flag) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.CENTER_INSIDE
+                    }
                 }
             }
         }

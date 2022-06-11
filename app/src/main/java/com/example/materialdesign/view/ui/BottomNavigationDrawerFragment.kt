@@ -64,6 +64,7 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                     startActivity(Intent(requireContext(), AnimationActivityBonus::class.java))
                 }
             }
+            dismiss()
             true
         }
     }

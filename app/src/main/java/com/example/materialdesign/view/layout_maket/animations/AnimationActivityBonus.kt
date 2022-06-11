@@ -28,22 +28,45 @@ class AnimationActivityBonus : AppCompatActivity() {
         binding = ActivityAnimationBonusStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.backgroundImage.setOnClickListener {
-            val changeBounds=ChangeBounds()
-            val  constraintSet = ConstraintSet()
-            flag = !flag
-            if (flag){
-                changeBounds.interpolator = AnticipateOvershootInterpolator(2.0f)
-                changeBounds.duration = duration
-                TransitionManager.beginDelayedTransition(binding.constraintContainer,changeBounds)
+        val constraintSet = ConstraintSet()
+        constraintSet.clone(binding.constraintContainer)
 
-                constraintSet.clone(this, R.layout.activity_animation_bonus_end)
+        binding.backgroundImage.setOnClickListener {
+            val changeBounds = ChangeBounds()
+
+            changeBounds.interpolator = AnticipateOvershootInterpolator(2.0f)
+            changeBounds.duration = duration
+
+            TransitionManager.beginDelayedTransition(binding.constraintContainer, changeBounds)
+            flag = !flag
+            if (flag) {
+                constraintSet.connect(
+                    R.id.title,
+                    ConstraintSet.END,
+                    R.id.constraint_container,
+                    ConstraintSet.END
+                )
+                constraintSet.connect(
+                    R.id.date,
+                    ConstraintSet.END,
+                    R.id.constraint_container,
+                    ConstraintSet.END
+                )
+
                 constraintSet.applyTo(binding.constraintContainer)
             } else {
-                changeBounds.interpolator = AnticipateOvershootInterpolator(2.0f)
-                changeBounds.duration = duration
-                TransitionManager.beginDelayedTransition(binding.constraintContainer,changeBounds)
-                constraintSet.clone(this, R.layout.activity_animation_bonus_start)
+                constraintSet.connect(
+                    R.id.title,
+                    ConstraintSet.END,
+                    R.id.backgroundImage,
+                    ConstraintSet.START
+                )
+                constraintSet.connect(
+                    R.id.date,
+                    ConstraintSet.START,
+                    R.id.title,
+                    ConstraintSet.END
+                )
                 constraintSet.applyTo(binding.constraintContainer)
             }
         }
