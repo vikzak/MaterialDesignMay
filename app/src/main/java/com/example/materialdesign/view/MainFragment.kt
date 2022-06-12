@@ -21,6 +21,8 @@ import com.example.materialdesign.R
 import com.example.materialdesign.databinding.FragmentMainBinding
 import com.example.materialdesign.repository.NasaRepositoryImplementation
 import com.example.materialdesign.view.chips.SettingFragment
+import com.example.materialdesign.view.layout_maket.animations.AnimationActivityBonus
+import com.example.materialdesign.view.recycler_view.RecyclerActivity
 import com.example.materialdesign.view.ui.BottomNavigationDrawerFragment
 import com.example.materialdesign.view.ui.ESIBottomSheetDialogFragment
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -215,6 +217,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 ""
             )
             R.id.navigation_one -> {}
+            R.id.app_bar_recycler ->{
+                startActivity(Intent(requireContext(), RecyclerActivity::class.java))
+            }
         }
         return super.onOptionsItemSelected(item)
     }
