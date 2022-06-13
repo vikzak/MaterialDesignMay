@@ -1,16 +1,82 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MaterialDesign" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MaterialDesign" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:navigationBarColor">?superColor_500</item>
+        <item name="colorPrimary">?superColor_500</item>
+        <item name="colorOnPrimary">?superColor_500</item>
+        <item name="colorPrimaryContainer">?superColor_100</item>
+        <item name="colorOnPrimaryContainer">?superColor_900</item>
+        <item name="colorPrimaryInverse">?superColor_200</item>
+        <item name="colorPrimaryVariant">?superColor_700</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">?superColor_600</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">?superColor_100</item>
+        <item name="colorOnSecondaryContainer">?superColor_900</item>
+        <item name="colorTertiary">?superColor_600</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">?superColor_100</item>
+        <item name="colorOnTertiaryContainer">?superColor_900</item>
+        <item name="colorSecondaryVariant">?superColor_700</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/superColor_900</item>
         <!-- Customize your theme here. -->
+        <item name="floatingActionButtonStyle">@style/myFloatingActionButtonStyle</item>
+        <item name="bottomAppBarStyle">@style/myBottomAppBarStyle</item>
+        <item name="textAppearanceHeadline1">@style/myHeadlineStyle</item>
     </style>
+
+    <!-- MY THEME -->
+    <style name="MyDefaultTheme" parent="Theme.MaterialDesign">
+        <item name="superColor_50">@color/paletteblue_50</item>
+        <item name="superColor_100">@color/paletteblue_100</item>
+        <item name="superColor_200">@color/paletteblue_200</item>
+        <item name="superColor_300">@color/paletteblue_300</item>
+        <item name="superColor_400">@color/paletteblue_400</item>
+        <item name="superColor_500">@color/paletteblue_500</item>
+        <item name="superColor_600">@color/paletteblue_600</item>
+        <item name="superColor_700">@color/paletteblue_700</item>
+        <item name="superColor_800">@color/paletteblue_800</item>
+        <item name="superColor_900">@color/paletteblue_900</item>
+        <item name="superColor_A100">@color/paletteblue_A100</item>
+        <item name="superColor_A200">@color/paletteblue_A200</item>
+        <item name="superColor_A400">@color/paletteblue_A400</item>
+        <item name="superColor_A700">@color/paletteblue_A700</item>
+    </style>
+
+    <style name="MyOrangeTheme" parent="Theme.MaterialDesign">
+        <item name="superColor_50">@color/paletteorange_50</item>
+        <item name="superColor_100">@color/paletteorange_100</item>
+        <item name="superColor_200">@color/paletteorange_200</item>
+        <item name="superColor_300">@color/paletteorange_300</item>
+        <item name="superColor_400">@color/paletteorange_400</item>
+        <item name="superColor_500">@color/paletteorange_500</item>
+        <item name="superColor_600">@color/paletteorange_600</item>
+        <item name="superColor_700">@color/paletteorange_700</item>
+        <item name="superColor_800">@color/paletteorange_800</item>
+        <item name="superColor_900">@color/paletteorange_900</item>
+        <item name="superColor_A100">@color/paletteorange_A100</item>
+        <item name="superColor_A200">@color/paletteorange_A200</item>
+        <item name="superColor_A400">@color/paletteorange_A400</item>
+        <item name="superColor_A700">@color/paletteorange_A700</item>
+    </style>
+
+    <style name="MyGreenTheme" parent="Theme.MaterialDesign">
+        <item name="superColor_50">@color/mypalettegreen_50</item>
+        <item name="superColor_100">@color/mypalettegreen_100</item>
+        <item name="superColor_200">@color/mypalettegreen_200</item>
+        <item name="superColor_300">@color/mypalettegreen_300</item>
+        <item name="superColor_400">@color/mypalettegreen_400</item>
+        <item name="superColor_500">@color/mypalettegreen_500</item>
+        <item name="superColor_600">@color/mypalettegreen_600</item>
+        <item name="superColor_700">@color/mypalettegreen_700</item>
+        <item name="superColor_800">@color/mypalettegreen_800</item>
+        <item name="superColor_900">@color/mypalettegreen_900</item>
+        <item name="superColor_A100">@color/mypalettegreen_A100</item>
+        <item name="superColor_A200">@color/mypalettegreen_A200</item>
+        <item name="superColor_A400">@color/mypalettegreen_A400</item>
+        <item name="superColor_A700">@color/mypalettegreen_A700</item>
+    </style>
+
 </resources>

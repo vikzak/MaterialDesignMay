@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/navigation_one"
+            android:icon="@drawable/ic_load_error_vector"
+            android:title="@string/title_navigation_one" />
+        <item
+            android:id="@+id/navigation_two"
+            android:icon="@drawable/ic_send"
+            android:title="@string/title_navigation_two" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_three"
+            android:icon="@drawable/ic_settings_menu"
+            android:title="@string/title_navigation_three" />
+
+        <item
+            android:id="@+id/navigation_four"
+            android:icon="@drawable/ic_favourite_menu"
+            android:title="@string/title_navigation_four" />
+
+        <item
+            android:id="@+id/navigation_five"
+            android:icon="@drawable/ic_baseline_markunread_mailbox_24"
+            android:title="@string/title_navigation_five" />
+
+        <item
+            android:id="@+id/navigation_six"
+            android:icon="@drawable/ic_archive"
+            android:title="@string/title_navigation_six" />
+        <item
+            android:id="@+id/navigation_seven"
+            android:icon="@drawable/ic_baseline_shuffle_24"
+            android:title="@string/title_navigation_seven" />
+        <item
+            android:id="@+id/navigation_eight"
+            android:icon="@drawable/ic_baseline_smart_button_24"
+            android:title="@string/title_navigation_eight" />
+        <item
+            android:id="@+id/navigation_nine"
+            android:icon="@drawable/ic_baseline_list_alt_24"
+            android:title="@string/title_navigation_nine" />
+        <item
+            android:id="@+id/navigation_ten"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/title_navigation_ten" />
+
+    </group>
+
+</menu>

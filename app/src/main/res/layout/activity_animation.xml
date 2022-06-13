@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/animation_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bottom_acb_animation_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/layout_margin"
+        android:text="@string/text_ACB_path"
+        android:gravity="start|top"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bottom_acb_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/text_ACB"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_viex_actw_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:text="@string/text_actv_activity_animation"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+
+</FrameLayout>
