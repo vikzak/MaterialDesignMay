@@ -33,6 +33,7 @@
     <string name="attr_text">test ?attr color</string>
     <string name="text_earht">Earht</string>
     <string name="text_mars">Mars</string>
+    <string name="text_header">Заголовок</string>
     <string name="text_system">System</string>
     <string name="earth_description_menu">Описание пункта Земля</string>
     <string name="mars_description_menu">Описание пункта Марс</string>

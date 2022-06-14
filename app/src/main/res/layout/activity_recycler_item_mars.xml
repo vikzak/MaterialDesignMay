@@ -23,6 +23,26 @@
         app:layout_constraintStart_toEndOf="@+id/ivMars"
         app:layout_constraintTop_toTopOf="@+id/ivMars" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/addItemIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin"
+        android:tint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_plus_fab" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/removeItemIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin"
+        android:tint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addItemIV"
+        app:srcCompat="@drawable/ic_archive" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
