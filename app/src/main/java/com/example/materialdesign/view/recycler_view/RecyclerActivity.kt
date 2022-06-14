@@ -32,6 +32,7 @@ class RecyclerActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         binding.recyclerActivityFAB.setOnClickListener {
             adapter.appendItem()
+            binding.recyclerView.smoothScrollToPosition(adapter.itemCount)
         }
     }
 

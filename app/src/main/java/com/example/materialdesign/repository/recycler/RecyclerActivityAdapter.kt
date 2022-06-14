@@ -87,6 +87,14 @@ holder.bind(listData[position])
                 ivMars.setOnClickListener {
                     onClickItemListener.onItemClick(data)
                 }
+                addItemIV.setOnClickListener {
+                    listData.add(layoutPosition,generateData())
+                    notifyItemInserted(layoutPosition)
+                }
+                removeItemIV.setOnClickListener {
+                    listData.removeAt(layoutPosition)
+                    notifyItemRemoved(layoutPosition)
+                }
             }
         }
     }
