@@ -13,6 +13,7 @@ import com.example.materialdesign.repository.recycler.*
 class RecyclerActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityRecyclerBinding
+    lateinit var itemTouchHelper: ItemTouchHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.MyOrangeTheme)
@@ -52,14 +53,22 @@ class RecyclerActivity : AppCompatActivity() {
                 Toast.makeText(this@RecyclerActivity, "result: ${data.name}", Toast.LENGTH_SHORT)
                     .show()
             }
+        }, object : OnStartDragListener {
+            override fun onStartDrag(view: RecyclerView.ViewHolder) {
+                itemTouchHelper.startDrag(view)
+            }
         })
+
         adapter.setData(listData)
         binding.recyclerView.adapter = adapter
         binding.recyclerActivityFAB.setOnClickListener {
             adapter.appendItem()
             binding.recyclerView.smoothScrollToPosition(adapter.itemCount)
         }
-        ItemTouchHelper(ItemTouchHelperCallBack(adapter)).attachToRecyclerView(binding.recyclerView)
+        itemTouchHelper =
+            ItemTouchHelper(ItemTouchHelperCallBack(adapter))
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView)
+        //ItemTouchHelper(ItemTouchHelperCallBack(adapter)).attachToRecyclerView(binding.recyclerView)
     }
 
     class ItemTouchHelperCallBack(val recyclerActivityAdapter: RecyclerActivityAdapter) :
@@ -78,7 +87,7 @@ class RecyclerActivity : AppCompatActivity() {
             from: RecyclerView.ViewHolder,
             to: RecyclerView.ViewHolder
         ): Boolean {
-            recyclerActivityAdapter.onItemMove(from.adapterPosition, to.adapterPosition)
+            if (to.adapterPosition > 0) recyclerActivityAdapter.onItemMove(from.adapterPosition, to.adapterPosition)
             return true
         }
 
@@ -88,13 +97,13 @@ class RecyclerActivity : AppCompatActivity() {
 
         override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
             if (viewHolder is RecyclerActivityAdapter.MarsViewHolder)
-            if (actionState!=ItemTouchHelper.ACTION_STATE_IDLE)
-            (viewHolder as RecyclerActivityAdapter.MarsViewHolder).onItemSelected()
+                if (actionState != ItemTouchHelper.ACTION_STATE_IDLE)
+                    (viewHolder as RecyclerActivityAdapter.MarsViewHolder).onItemSelected()
         }
 
         override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
             if (viewHolder is RecyclerActivityAdapter.MarsViewHolder)
-            (viewHolder as RecyclerActivityAdapter.MarsViewHolder).onItemClear()
+                (viewHolder as RecyclerActivityAdapter.MarsViewHolder).onItemClear()
         }
 
     }

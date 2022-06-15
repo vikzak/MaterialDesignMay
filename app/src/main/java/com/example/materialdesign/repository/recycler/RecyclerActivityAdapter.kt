@@ -3,8 +3,10 @@ package com.example.materialdesign.repository.recycler
 import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.MotionEventCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.ActivityRecyclerItemEarthBinding
@@ -13,8 +15,11 @@ import com.example.materialdesign.databinding.ActivityRecyclerItemMarsBinding
 import com.example.materialdesign.view.recycler_view.ItemTouchHelperAdapter
 import com.example.materialdesign.view.recycler_view.ItemTouchHelperViewHolde
 
-class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
-    RecyclerView.Adapter<RecyclerActivityAdapter.BaseViewHolde>(),ItemTouchHelperAdapter {
+class RecyclerActivityAdapter(
+    val onClickItemListener: OnClickItemListener,
+    val onStartDragListener: OnStartDragListener
+) :
+    RecyclerView.Adapter<RecyclerActivityAdapter.BaseViewHolde>(), ItemTouchHelperAdapter {
     private lateinit var listData: MutableList<Pair<Data, Boolean>>
 
     fun setData(listData: MutableList<Pair<Data, Boolean>>) {
@@ -82,7 +87,7 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
         }
     }
 
-    inner class MarsViewHolder(view: View) : BaseViewHolde(view),ItemTouchHelperViewHolde {
+    inner class MarsViewHolder(view: View) : BaseViewHolde(view), ItemTouchHelperViewHolde {
         override fun bind(data: Pair<Data, Boolean>) {
             ActivityRecyclerItemMarsBinding.bind(itemView).apply {
                 tvName.text = data.first.name
@@ -121,6 +126,12 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
                     }
                     notifyItemChanged(layoutPosition)
                 }
+                dragHandleIV.setOnTouchListener { view, motionEvent ->
+                    if (MotionEventCompat.getActionMasked(motionEvent) == MotionEvent.ACTION_DOWN){
+                        onStartDragListener.onStartDrag(this@MarsViewHolder)
+                    }
+                    return@setOnTouchListener false
+                }
             }
         }
 
@@ -142,8 +153,8 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
     }
 
     override fun onItemDismiss(dismissPosition: Int) {
-       listData.removeAt(dismissPosition)
-       notifyItemRemoved(dismissPosition)
+        listData.removeAt(dismissPosition)
+        notifyItemRemoved(dismissPosition)
     }
 
     inner class HeaderViewHolder(view: View) : BaseViewHolde(view) {
@@ -161,7 +172,6 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
     abstract class BaseViewHolde(view: View) : RecyclerView.ViewHolder(view) {
         abstract fun bind(data: Pair<Data, Boolean>)
     }
-
 
 
 }
