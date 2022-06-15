@@ -17,12 +17,19 @@ class RecyclerActivity : AppCompatActivity() {
         binding = ActivityRecyclerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val lat = 20
+        val lon = 23
+        val myCoordonates = lat to lon
+
         val listData = arrayListOf(
-            Data(getString(R.string.text_earht),getString(R.string.recycler_earth_description)),
-            Data(getString(R.string.text_mars), type = TYPE_MARS)
+            Pair(Data(getString(R.string.text_earht),getString(R.string.recycler_earth_description)),false),
+            Pair(Data(getString(R.string.text_mars), type = TYPE_MARS),false),
+            Pair(Data(getString(R.string.text_mars), type = TYPE_MARS),false),
+            Pair(Data(getString(R.string.text_earht),getString(R.string.recycler_earth_description)),false),
+            Pair(Data(getString(R.string.text_earht),getString(R.string.recycler_earth_description)),false),
         )
         listData.shuffle()
-        listData.add(0,Data(getString(R.string.text_header), type = TYPE_HEADER))
+        listData.add(0,Pair(Data(getString(R.string.text_header), type = TYPE_HEADER),false))
         val adapter = RecyclerActivityAdapter(object : OnClickItemListener{
             override fun onItemClick(data: Data) {
                 Toast.makeText(this@RecyclerActivity,"result: ${data.name}",Toast.LENGTH_SHORT).show()

@@ -11,10 +11,10 @@ import com.example.materialdesign.databinding.ActivityRecyclerItemHeaderBinding
 import com.example.materialdesign.databinding.ActivityRecyclerItemMarsBinding
 
 class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
-    RecyclerView.Adapter<RecyclerActivityAdapter.BaseViewHolde >() {
-    private lateinit var listData: MutableList<Data>
+    RecyclerView.Adapter<RecyclerActivityAdapter.BaseViewHolde>() {
+    private lateinit var listData: MutableList<Pair<Data, Boolean>>
 
-    fun setData(listData: MutableList<Data>) {
+    fun setData(listData: MutableList<Pair<Data, Boolean>>) {
         this.listData = listData
     }
 
@@ -48,7 +48,7 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
     }
 
     override fun onBindViewHolder(holder: BaseViewHolde, position: Int) {
-holder.bind(listData[position])
+        holder.bind(listData[position])
     }
 
     override fun getItemCount(): Int {
@@ -56,63 +56,86 @@ holder.bind(listData[position])
     }
 
     override fun getItemViewType(position: Int): Int {
-        return listData[position].type
+        return listData[position].first.type
     }
 
     fun appendItem() {
         listData.add(generateData())
-        notifyItemInserted(listData.size-1)
+        notifyItemInserted(listData.size - 1)
     }
 
-    fun generateData(): Data {
-        return Data("Mars", type = TYPE_MARS)
-    }
+    fun generateData() = Pair(Data("Mars", type = TYPE_MARS), false)
+
 
     inner class EarthViewHolder(view: View) : BaseViewHolde(view) {
-        override fun bind(data: Data) {
+        override fun bind(data: Pair<Data, Boolean>) {
             ActivityRecyclerItemEarthBinding.bind(itemView).apply {
-                tvName.text = data.name
-                tvDescription.text = data.description
+                tvName.text = data.first.name
+                tvDescription.text = data.first.description
                 ivEarth.setOnClickListener {
-                    onClickItemListener.onItemClick(data)
+                    onClickItemListener.onItemClick(data.first)
                 }
             }
         }
     }
 
     inner class MarsViewHolder(view: View) : BaseViewHolde(view) {
-        override fun bind(data: Data) {
+        override fun bind(data: Pair<Data, Boolean>) {
             ActivityRecyclerItemMarsBinding.bind(itemView).apply {
-                tvName.text = data.name
+                tvName.text = data.first.name
                 ivMars.setOnClickListener {
-                    onClickItemListener.onItemClick(data)
+                    onClickItemListener.onItemClick(data.first)
                 }
                 addItemIV.setOnClickListener {
-                    listData.add(layoutPosition,generateData())
+                    listData.add(layoutPosition, generateData())
                     notifyItemInserted(layoutPosition)
                 }
                 removeItemIV.setOnClickListener {
                     listData.removeAt(layoutPosition)
                     notifyItemRemoved(layoutPosition)
                 }
+                moveItemUp.setOnClickListener {
+                    if (layoutPosition > 1) {
+                        listData.removeAt(layoutPosition).apply {
+                            listData.add(layoutPosition - 1, this)
+                        }
+                        notifyItemMoved(layoutPosition, layoutPosition - 1)
+                    }
+                }
+                moveItemDown.setOnClickListener {
+                    if ((layoutPosition + 1) < listData.size) {
+                        listData.removeAt(layoutPosition).apply {
+                            listData.add(layoutPosition + 1, this)
+                        }
+                        notifyItemMoved(layoutPosition, layoutPosition + 1)
+                    }
+                }
+                marsDescriptionTV.visibility =
+                    if (listData[layoutPosition].second) View.VISIBLE else View.GONE
+                itemView.setOnClickListener {
+                    listData[layoutPosition] = listData[layoutPosition].let {
+                        it.first to !it.second
+                    }
+                    notifyItemChanged(layoutPosition)
+                }
             }
         }
     }
 
     inner class HeaderViewHolder(view: View) : BaseViewHolde(view) {
-        override fun bind(data: Data) {
+        override fun bind(data: Pair<Data, Boolean>) {
             ActivityRecyclerItemHeaderBinding.bind(itemView).apply {
-                tvHeader.text = data.name
+                tvHeader.text = data.first.name
                 itemView.setOnClickListener {
-                    onClickItemListener.onItemClick(data)
+                    onClickItemListener.onItemClick(data.first)
                 }
             }
         }
     }
 
 
-    abstract class BaseViewHolde(view: View):RecyclerView.ViewHolder(view){
-        abstract fun bind(data: Data)
+    abstract class BaseViewHolde(view: View) : RecyclerView.ViewHolder(view) {
+        abstract fun bind(data: Pair<Data, Boolean>)
     }
 
 
