@@ -1,6 +1,7 @@
 package com.example.materialdesign.repository.recycler
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +10,11 @@ import com.example.materialdesign.R
 import com.example.materialdesign.databinding.ActivityRecyclerItemEarthBinding
 import com.example.materialdesign.databinding.ActivityRecyclerItemHeaderBinding
 import com.example.materialdesign.databinding.ActivityRecyclerItemMarsBinding
+import com.example.materialdesign.view.recycler_view.ItemTouchHelperAdapter
+import com.example.materialdesign.view.recycler_view.ItemTouchHelperViewHolde
 
 class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
-    RecyclerView.Adapter<RecyclerActivityAdapter.BaseViewHolde>() {
+    RecyclerView.Adapter<RecyclerActivityAdapter.BaseViewHolde>(),ItemTouchHelperAdapter {
     private lateinit var listData: MutableList<Pair<Data, Boolean>>
 
     fun setData(listData: MutableList<Pair<Data, Boolean>>) {
@@ -79,7 +82,7 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
         }
     }
 
-    inner class MarsViewHolder(view: View) : BaseViewHolde(view) {
+    inner class MarsViewHolder(view: View) : BaseViewHolde(view),ItemTouchHelperViewHolde {
         override fun bind(data: Pair<Data, Boolean>) {
             ActivityRecyclerItemMarsBinding.bind(itemView).apply {
                 tvName.text = data.first.name
@@ -120,6 +123,27 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
                 }
             }
         }
+
+        override fun onItemSelected() {
+            itemView.setBackgroundColor(Color.LTGRAY)
+        }
+
+        override fun onItemClear() {
+            itemView.setBackgroundColor(0)
+        }
+    }
+
+
+    override fun onItemMove(firstPosition: Int, toPosition: Int) {
+        listData.removeAt(firstPosition).apply {
+            listData.add(toPosition, this)
+        }
+        notifyItemMoved(firstPosition, toPosition)
+    }
+
+    override fun onItemDismiss(dismissPosition: Int) {
+       listData.removeAt(dismissPosition)
+       notifyItemRemoved(dismissPosition)
     }
 
     inner class HeaderViewHolder(view: View) : BaseViewHolde(view) {
@@ -137,6 +161,7 @@ class RecyclerActivityAdapter(val onClickItemListener: OnClickItemListener) :
     abstract class BaseViewHolde(view: View) : RecyclerView.ViewHolder(view) {
         abstract fun bind(data: Pair<Data, Boolean>)
     }
+
 
 
 }
