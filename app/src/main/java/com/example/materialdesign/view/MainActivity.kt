@@ -1,7 +1,10 @@
 package com.example.materialdesign.view
 
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.materialdesign.databinding.ActivityMainBinding
 
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity(com.example.materialdesign.R.layout.activ
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(getRealStyleStyle(getCurrentTheme()))
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(com.example.materialdesign.R.layout.activity_main)
         setContentView(binding.root)

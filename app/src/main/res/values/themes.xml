@@ -27,7 +27,7 @@
         <item name="textAppearanceHeadline1">@style/myHeadlineStyle</item>
     </style>
 
-    <style name="MySplashTheme" parent="Theme.MaterialDesign">
+    <style name="MySplashTheme" parent="MyDefaultTheme">
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
     <!-- MY THEME -->
