@@ -14,13 +14,27 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_AK_true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/mypalettegreen_50"
+                android:text="Click to Google font download! = true" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_AK_false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent40Alfa"
+                android:text="Click to Google font download! = false" />
+
             <TextView
                 android:id="@+id/text_Title_dialog_sheet_bottom"
-                android:textAppearance="@style/myHeadlineStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_text_generator"
                 android:textAlignment="center"
+                android:textAppearance="@style/myHeadlineStyle"
                 android:textSize="@dimen/text_size_title"
                 tools:text="text title" />
 
@@ -30,8 +44,8 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/text_padding_start_explanation"
                 android:paddingEnd="@dimen/text_padding_end_explanation"
-                android:textSize="@dimen/text_size_explanation"
-                android:text="@string/text_generator"/>
+                android:text="@string/text_generator"
+                android:textSize="@dimen/text_size_explanation" />
 
 
         </LinearLayout>
