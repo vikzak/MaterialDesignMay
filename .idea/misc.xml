@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/pause_to_play.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/play_to_pause.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.152" />
         <entry key="app/src/main/res/drawable/swipe_indicator_active.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.175" />
         <entry key="app/src/main/res/font/amatic_sc.xml" value="0.2814814814814815" />

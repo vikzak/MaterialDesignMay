@@ -27,6 +27,9 @@
         <item name="textAppearanceHeadline1">@style/myHeadlineStyle</item>
     </style>
 
+    <style name="MySplashTheme" parent="Theme.MaterialDesign">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
     <!-- MY THEME -->
     <style name="MyDefaultTheme" parent="Theme.MaterialDesign">
         <item name="superColor_50">@color/paletteblue_50</item>
