@@ -11,5 +11,11 @@
         android:title="@string/fragment_ux_button"
         android:tooltipText="@string/fragment_ux_button" />
 
+    <item
+        android:id="@+id/fragment_ux_tutorial"
+        android:icon="@drawable/ic_baseline_device_unknown_24"
+        android:title="@string/fragment_ux_tutorial"
+        android:tooltipText="@string/fragment_ux_tutorial" />
+
 
 </menu>

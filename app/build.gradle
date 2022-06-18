@@ -68,4 +68,6 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
     // viewPager2
     //implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    // for tutorial
+    implementation'com.github.mreram:showcaseview:1.4.0'
 }

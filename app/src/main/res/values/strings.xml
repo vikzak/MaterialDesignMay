@@ -68,6 +68,7 @@
     <string name="fragment_ux_button">button</string>
     <string name="good">Правильно:</string>
     <string name="notgood">Неправильно</string>
+    <string name="fragment_ux_tutorial">tutorial</string>
 
 
 </resources>
