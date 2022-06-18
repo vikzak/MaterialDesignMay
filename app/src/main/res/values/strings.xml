@@ -64,6 +64,10 @@
     <string name="recycler_earth_description">Описание планеты Земля</string>
     <string name="recycler_mars_description">Описание планеты Марс</string>
     <string name="fragment_ux">fragment ux</string>
+    <string name="fragment_ux_text">text</string>
+    <string name="fragment_ux_button">button</string>
+    <string name="good">Правильно:</string>
+    <string name="notgood">Неправильно</string>
 
 
 </resources>

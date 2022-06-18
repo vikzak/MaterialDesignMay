@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="android:navigationBarColor">?superColor_500</item>
         <item name="colorPrimary">?superColor_500</item>
-        <item name="colorOnPrimary">?superColor_500</item>
+        <item name="colorOnPrimary">?superColor_200</item>
         <item name="colorPrimaryContainer">?superColor_100</item>
         <item name="colorOnPrimaryContainer">?superColor_900</item>
         <item name="colorPrimaryInverse">?superColor_200</item>
