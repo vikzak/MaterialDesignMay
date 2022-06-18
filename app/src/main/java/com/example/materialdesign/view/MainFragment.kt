@@ -27,6 +27,10 @@ import com.example.materialdesign.view.ui.BottomNavigationDrawerFragment
 import com.example.materialdesign.view.ui.ESIBottomSheetDialogFragment
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import smartdevelop.ir.eram.showcaseviewlib.GuideView
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener
 
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -196,6 +200,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             }
             isMain = !isMain
         }
+
+
     }
 
 
