@@ -31,6 +31,7 @@ class UXActivity : AppCompatActivity() {
             }
             true
         }
+        binding.bottomNavigationViewUX.selectedItemId = R.id.fragment_ux
     }
 
     fun navigateTo(fragment: Fragment){

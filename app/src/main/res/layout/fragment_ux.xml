@@ -3,7 +3,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/mypalettegreen_100">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorAccent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Заголовок текста"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Это основной текст. Он как и текст выше не несет смысловой нагрузки и необходим исключительно для примера."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="текст сноски"
+            android:textAlignment="center"
+            android:textColor="@color/color_gray_two"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Заголовок текста"
+            android:textAlignment="center"
+            android:textColor="@color/textDarkPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Это основной текст. Он как и текст выше не несет смысловой нагрузки и необходим исключительно для примера."
+            android:textAlignment="center"
+            android:textColor="@color/textDarkSecondary"
+            android:textSize="22sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="текст сноски"
+            android:textAlignment="center"
+            android:textColor="@color/textDarkDisabled"
+            android:textSize="22sp"/>
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/teal_200"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Заголовок текста"
+            android:textAlignment="center"
+            android:textColor="@color/textDarkPrimary"
+            android:textSize="22sp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Это основной текст. Он как и текст выше не несет смысловой нагрузки и необходим исключительно для примера."
+            android:textAlignment="center"
+            android:textColor="@color/textDarkSecondary"
+            android:textSize="22sp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="текст сноски"
+            android:textAlignment="center"
+            android:textColor="@color/textDarkDisabled"
+            android:textSize="22sp"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
 </LinearLayout>
