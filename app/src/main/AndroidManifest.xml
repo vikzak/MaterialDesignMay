@@ -62,6 +62,9 @@
         <activity android:name=".view.recycler_view.RecyclerActivity"
             android:exported="true">
         </activity>
+        <activity android:name=".view.ux.UXActivity"
+            android:exported="true">
+        </activity>
 
     </application>
 

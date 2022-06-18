@@ -63,7 +63,7 @@
     <string name="recycler">recycler</string>
     <string name="recycler_earth_description">Описание планеты Земля</string>
     <string name="recycler_mars_description">Описание планеты Марс</string>
-
+    <string name="fragment_ux">fragment ux</string>
 
 
 </resources>

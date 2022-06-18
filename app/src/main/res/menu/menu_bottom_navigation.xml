@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/navigation_one"
@@ -47,6 +48,11 @@
             android:id="@+id/navigation_ten"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
             android:title="@string/title_navigation_ten" />
+        <item
+            android:id="@+id/navigation_eleven"
+            android:icon="@drawable/ic_baseline_add_task_24"
+            android:title="@string/fragment_ux"
+            app:showAsAction="ifRoom"/>
 
     </group>
 

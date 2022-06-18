@@ -12,6 +12,7 @@ import com.example.materialdesign.view.layout_maket.LayoutActivity
 import com.example.materialdesign.view.layout_maket.animations.*
 import com.example.materialdesign.view.navigation.BottomNavigationActivity
 import com.example.materialdesign.view.navigation.NavigationActivity
+import com.example.materialdesign.view.ux.UXActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
@@ -62,6 +63,9 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 }
                 R.id.navigation_ten -> {
                     startActivity(Intent(requireContext(), AnimationActivityBonus::class.java))
+                }
+                R.id.navigation_eleven -> {
+                    startActivity(Intent(requireContext(), UXActivity::class.java))
                 }
             }
             dismiss()
